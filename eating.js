@@ -6,6 +6,7 @@ function randomNumber(min,max)
 var dog = document.getElementById("dog");
 var dogXVal = Number(dog.getAttribute("x"));
 var dogYVal = Number(dog.getAttribute("y"));
+var foodEaten = 0;
 var height = 40;
 var width= 40;
 
@@ -40,6 +41,8 @@ document.addEventListener("keydown", function(e) {
     var randX = randomNumber(50,700)
     var food1 = document.getElementById("food1")
     food1.setAttribute("x", randX)
+    foodEaten = foodEaten + 1
+    document.getElementById("score").textContent = foodEaten
     console.log("overlap");
   }
 
@@ -50,8 +53,9 @@ document.addEventListener("keydown", function(e) {
     var randX = randomNumber(50,700)
     var food2 = document.getElementById("food2")
     food2.setAttribute("x", randX)
+    foodEaten = foodEaten + 1
+    document.getElementById("score").textContent = foodEaten
     console.log("overlap");
   }
-
 
 })
