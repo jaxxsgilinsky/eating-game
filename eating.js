@@ -1,3 +1,8 @@
+function randomNumber(min,max)
+{
+ return Math.floor(Math.random()*(max-min+1)+min);
+}
+
 var dog = document.getElementById("dog");
 var dogXVal = Number(dog.getAttribute("x"));
 var dogYVal = Number(dog.getAttribute("y"));
@@ -32,6 +37,9 @@ document.addEventListener("keydown", function(e) {
   var ballY = Number(document.getElementById("food1").getAttribute("y"))
 
   if (dogXVal > ballX && dogXVal < ballX + width && dogYVal > ballY && dogYVal < ballY + height) {
+    var randX = randomNumber(50,700)
+    var food1 = document.getElementById("food1")
+    food1.setAttribute("x", randX)
     console.log("overlap");
   }
 
@@ -39,6 +47,9 @@ document.addEventListener("keydown", function(e) {
   ballY = Number(document.getElementById("food2").getAttribute("y"))
 
   if (dogXVal > ballX && dogXVal < ballX + width && dogYVal > ballY && dogYVal < ballY + height) {
+    var randX = randomNumber(50,700)
+    var food2 = document.getElementById("food2")
+    food2.setAttribute("x", randX)
     console.log("overlap");
   }
 
