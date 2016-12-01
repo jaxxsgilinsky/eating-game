@@ -58,4 +58,12 @@ document.addEventListener("keydown", function(e) {
     console.log("overlap");
   }
 
+  if(foodEaten == 5) {
+    document.getElementById("screen").pauseAnimations()
+    var timeStop = Date.now()
+    var timeDuration = timeStop-timeStart
+    timeDuration = timeDuration/1000
+    document.getElementById("totaltime").textContent = foodEaten
+  }
+
 })
