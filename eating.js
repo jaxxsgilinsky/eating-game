@@ -9,8 +9,7 @@ var dogYVal = Number(dog.getAttribute("y"));
 var foodEaten = 0;
 var height = 40;
 var width= 40;
-
-
+var timeStart = Date.now()
 document.addEventListener("keydown", function(e) {
 
   if (e.keyCode == 37) {
@@ -63,7 +62,7 @@ document.addEventListener("keydown", function(e) {
     var timeStop = Date.now()
     var timeDuration = timeStop-timeStart
     timeDuration = timeDuration/1000
-    document.getElementById("totaltime").textContent = foodEaten
+    document.getElementById("totaltime").textContent = timeDuration
   }
 
 })
